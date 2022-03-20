@@ -7,8 +7,9 @@ namespace AplikacjaDoNaukiJęzyków.Models
 {
     public class Slownik
     {
-        public string List()<string> = new();
+        public List<Slowo> slownik = new List<Slowo>();
 
-        
+
+
     }
 }

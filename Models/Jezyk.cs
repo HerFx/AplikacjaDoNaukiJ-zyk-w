@@ -10,6 +10,7 @@ namespace AplikacjaDoNaukiJęzyków.Models
         private string nazwaJezyka;
         private string poziomJezyka;
 
+
         public string NazwaJezyka
         {
             get
