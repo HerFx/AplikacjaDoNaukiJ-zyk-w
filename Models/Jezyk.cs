@@ -7,8 +7,8 @@ namespace AplikacjaDoNaukiJęzyków.Models
 {
    class Jezyk
     {
-        private string nazwaJezyka;
-        private string poziomJezyka;
+        public string nazwaJezyka;
+        public string poziomJezyka;
 
 
         public string NazwaJezyka
@@ -39,8 +39,8 @@ namespace AplikacjaDoNaukiJęzyków.Models
 
         public Jezyk(string nazwa, string poziom)
         {
-            this.nazwaJezyka = nazwa;
-            this.poziomJezyka = poziom;
+            this.NazwaJezyka = nazwa;
+            this.PoziomJezyka = poziom;
         }
     }
 }
