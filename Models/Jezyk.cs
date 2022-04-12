@@ -1,46 +1,29 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace AplikacjaDoNaukiJęzyków.Models
 {
-   public class Jezyk
+    public class Jezyk
     {
-        public string nazwaJezyka;
-        public string poziomJezyka;
+        private string nazwaJezyka;
+        private string poziomJezyka;
+        private string imageUrl;
+        private string opis;
 
+        public string NazwaJezyka { get; set; }
+        public string PoziomJezyka { get; set; }
+        public string ImageUrl { get; set; }
+        public string Opis { get; set; }
 
-        public string NazwaJezyka
-        {
-            get
-            {
-                return nazwaJezyka;
-            }
-
-            set
-            {
-                nazwaJezyka = value;
-            }
-        }
-
-        public string PoziomJezyka
-        {
-            get
-            {
-                return poziomJezyka;
-            }
-
-            set
-            {
-                poziomJezyka = value;
-            }
-        }
-
-        public Jezyk(string nazwa, string poziom)
+        public Jezyk(string nazwa, string poziom, string ImageUrl = "", string opis = "Jezyk")
         {
             this.NazwaJezyka = nazwa;
             this.PoziomJezyka = poziom;
+            this.ImageUrl = ImageUrl;
+            this.Opis = opis;
         }
     }
 }
