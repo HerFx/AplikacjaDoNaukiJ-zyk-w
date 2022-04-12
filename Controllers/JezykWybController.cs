@@ -34,5 +34,12 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
 
             return View();
         }
+
+        public IActionResult Jezyk(string nazwaJezyka)
+        {
+            ViewData["Nazwa"] = "Język " + nazwaJezyka;
+
+            return View();
+        }
     }
 }

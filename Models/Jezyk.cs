@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AplikacjaDoNaukiJęzyków.Models
 {
-    public class Jezyk
+
+   public class Jezyk
     {
         private string nazwaJezyka;
         private string poziomJezyka;
