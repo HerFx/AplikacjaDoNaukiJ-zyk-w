@@ -1,0 +1,11 @@
+﻿@{
+    var jezyk = ViewData["Jezyk"] as Jezyk;
+    ViewData["Nazwa"] = @jezyk.NazwaJezyka;
+}
+<h1>Wybierz Język</h1>
+
+<div class="btn-group container" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Jezyk", "JezykWyb", new {nazwaJezyka = @ViewData["Nazwa"]})'">Język @ViewData["Nazwa"]</button>
+    <button type="button" class="btn btn-primary">Middle</button>
+    <button type="button" class="btn btn-primary">Right</button>
+</div>
