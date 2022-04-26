@@ -178,7 +178,7 @@ nav {
     }
 
 .offer-title {
-    margin-top: 80px;
+    margin-top: 100px;
     height:40px;
     display:flex;
     justify-content: center;
@@ -187,7 +187,8 @@ nav {
 
 
 .counts {
-    margin-top:80px;
+    margin-top:100px;
+    margin-bottom: 100px;
     padding: 60px 0;
 }
 
@@ -214,4 +215,86 @@ nav {
         }
 .section-bg {
     background-color: black;
+    width: 100%;
 }
+
+
+
+.about {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.about-title{
+    text-align: center;
+}
+
+    .about-title > h2 {
+        margin-bottom: 60px;
+    }
+
+
+.test {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.test-title {
+    margin-bottom: 80px;
+}
+
+.footer {
+    background-color: black;
+    height: 60px;
+    text-align: center;
+}
+
+    .footer p {
+        color: #fed136;
+    }
+.kurs-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kurs {
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    width: 60%;
+}
+    .kurs h2 {
+        margin-bottom: 40px;
+        font-weight: 700;
+        color: #fed136;
+    }
+    .kurs p {
+        margin-top: 40px;
+        text-align: center;
+        color: white;
+    }
+
+.flagi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.kurs-nazwa{
+    display:flex;
+    width: 33%;
+    justify-content: center;
+    align-items: center;
+}
+    .kurs-nazwa span {
+        padding-left: 10px;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: 700;
+    }
+    .kurs-nazwa > img {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+    }
+
+
+
