@@ -9,6 +9,11 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
 {
     public class JezykWybController : Controller
     {
+        private DatabaseContext context;
+        public JezykWybController(DatabaseContext context)
+        {
+            this.context = context;
+        }
         public IActionResult JezykWyb()
         {
             List<Jezyk> jezyki = new List<Jezyk>();
@@ -27,12 +32,13 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
 
             return View(jezyki);
         }
-
         public IActionResult Jezyk(string nazwaJezyka)
         {
-            ViewData["Nazwa"] = "Język " + nazwaJezyka;
-
-            return View();
+            ViewBag.NazwaJezyka = nazwaJezyka;
+            var slowa = context.Slowa.Where(s => s.PoziomSlowa == "Zaawansowany");
+            return View(slowa);
         }
+
+
     }
 }

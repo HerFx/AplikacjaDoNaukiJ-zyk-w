@@ -1,9 +1,5 @@
-﻿@{
-    
-}
-<h1>@ViewData["Nazwa"]</h1>
-
-
+﻿@model IEnumerable<Slowo>;
+<h1>Jezyk @ViewBag.NazwaJezyka</h1>
 
     <table class="table  mt-5">
         <thead>
@@ -15,36 +11,30 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Dom</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Samochód</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Drzewo</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Pies</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Kot</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
+        @{
+            int counter = 1;
+            foreach (var slowo in Model)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    @switch(ViewBag.NazwaJezyka)
+                    {
+                        case "Angielski":
+                            <td>@slowo.SlowoAng</td>
+                            break;
+                        case "Ukraiński":
+                            <td>@slowo.SlowoUkr</td>
+                            break;
+                        case "Arabski":
+                            <td>@slowo.SlowoAra</td>
+                            break;
+                    }
+                    <td><input type="text"></td>
+                    <td><button type="submit" class="btn btn-dark"/>Sprwadź</td>
+                </tr> 
+               counter++;
+            }
+        }
         </tbody>
     </table>
     

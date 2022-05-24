@@ -1,5 +1,6 @@
 ﻿using AplikacjaDoNaukiJęzyków.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
         {
             return View();
         }
-
+        
         [Route("Home/Index/{poziom:int}")]
         public IActionResult Index(int poziom = 1)
         {
@@ -40,7 +41,7 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
             }
             return View();
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
