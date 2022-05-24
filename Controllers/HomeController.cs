@@ -23,6 +23,24 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
             return View();
         }
 
+        [Route("Home/Index/{poziom:int}")]
+        public IActionResult Index(int poziom = 1)
+        {
+            switch (poziom)
+            {
+                case 1:
+                    ViewData["poziom"] = "Podstawowy";
+                    break;
+                case 2:
+                    ViewData["poziom"] = "Średniozaawansowany";
+                    break;
+                case 3:
+                    ViewData["poziom"] = "Zaawansowany";
+                    break;
+            }
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

@@ -9,15 +9,11 @@ namespace AplikacjaDoNaukiJęzyków.Models
 
    public class Jezyk
     {
-        private string nazwaJezyka;
-        private string poziomJezyka;
-        private string imageUrl;
-        private string opis;
 
-        public string NazwaJezyka { get; set; }
-        public string PoziomJezyka { get; set; }
-        public string ImageUrl { get; set; }
-        public string Opis { get; set; }
+        public string NazwaJezyka { get; private set; }
+        public string PoziomJezyka { get; private set; }
+        public string ImageUrl { get; private set; }
+        public string Opis { get; private set; }
 
         public Jezyk(string nazwa, string poziom, string ImageUrl = "", string opis = "Jezyk")
         {
