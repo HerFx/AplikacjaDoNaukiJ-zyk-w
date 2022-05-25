@@ -1,9 +1,5 @@
-﻿@{
-    
-}
-<h1>@ViewData["Nazwa"]</h1>
-
-
+﻿@model IEnumerable<Slowo>;
+<h1>Jezyk @ViewBag.NazwaJezyka</h1>
 
     <table class="table  mt-5">
         <thead>
@@ -15,36 +11,41 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Dom</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Samochód</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Drzewo</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Pies</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Kot</td>
-                <td><input type="text"></td>
-                <td><button type="button" class="btn btn-dark">Sprawdź</button></td>
-            </tr>
+        @{
+            int counter = 1;
+            foreach (var slowo in Model)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    @switch(ViewBag.NazwaJezyka)
+                    {
+                        case "Angielski":
+                            <td id="slowo">@slowo.SlowoAng</td>
+                            break;
+                        case "Ukraiński":
+                            <td id="slowo">@slowo.SlowoUkr</td>
+                            break;
+                        case "Arabski":
+                            <td id="slowo">@slowo.SlowoAra</td>
+                            break;
+                    }
+                    <td><input type="text" name="text" id="odpowiedz"></td>
+                    <td><button type="submit" class="btn btn-dark" onclick="sprawdz()"/>Sprwadź</td>
+                </tr> 
+               counter++;
+            }
+        }
         </tbody>
     </table>
+<script>
+    function sprawdz() {
+        var tekst1 = document.getElementById("odpowiedz").value;
+        var tekst2 = document.getElementById("slowo");
+        if (tekst1 === tekst2.textContent) {
+            return tekst2.style.color = "#90ee90";
+        } else {
+            return tekst2.style.color = "#ff0000";
+        }
+    }
+</script>
     
