@@ -1,0 +1,13 @@
+﻿<div class="container">
+    <h1 class="text-center">Wybierz Poziom</h1>
+    <div class="mt-5">
+        @foreach (var template in templates)
+        {
+            <a href="@Url.Action("Jezyk", "JezykWyb", new {nazwaJezyka = @ViewBag.NazwaJezyka, poziom = @template})" class="btn btn-primary btn-lg btn-block mt-3 mb-3">@template</a>
+        }
+    </div>
+</div>
+@functions 
+{
+    List<string> templates = new List<string>() { "Podstawowy", "Średniozaawansowany", "Zaawansowany" };
+}

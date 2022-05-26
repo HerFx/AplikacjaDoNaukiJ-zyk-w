@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Slowo>;
+﻿
 <h1>Jezyk @ViewBag.NazwaJezyka</h1>
 
     <table class="table  mt-5">
@@ -20,17 +20,18 @@
                     @switch(ViewBag.NazwaJezyka)
                     {
                         case "Angielski":
-                            <td id="slowo">@slowo.SlowoAng</td>
+                            <td class="slowo">@slowo.SlowoAng</td>
                             break;
                         case "Ukraiński":
-                            <td id="slowo">@slowo.SlowoUkr</td>
+                            <td class="slowo">@slowo.SlowoUkr</td>
                             break;
                         case "Arabski":
-                            <td id="slowo">@slowo.SlowoAra</td>
+                            <td class="slowo">@slowo.SlowoAra</td>
                             break;
                     }
-                    <td><input type="text" name="text" id="odpowiedz"></td>
-                    <td><button type="submit" class="btn btn-dark" onclick="sprawdz()"/>Sprwadź</td>
+                    <td class="slowo" style="display:none;">@slowo.SlowoPol</td>
+                    <td><input type="text" name="text" class="odpowiedz"></td>
+                    <td><button type="submit" class="btn btn-dark" onclick="sprawdz(this)"/>Sprwadź</td>
                 </tr> 
                counter++;
             }
@@ -38,13 +39,15 @@
         </tbody>
     </table>
 <script>
-    function sprawdz() {
-        var tekst1 = document.getElementById("odpowiedz").value;
-        var tekst2 = document.getElementById("slowo");
+    function sprawdz(elem) {
+        var parent = elem.parentNode.parentNode;
+        var tekst1 = parent.children[3].firstChild.value;
+        var tekst2 = parent.children[2];
+        var tekst3 = parent.children[1];
         if (tekst1 === tekst2.textContent) {
-            return tekst2.style.color = "#90ee90";
+            return tekst3.style.color = "#90ee90";
         } else {
-            return tekst2.style.color = "#ff0000";
+            return tekst3.style.color = "#ff0000";
         }
     }
 </script>

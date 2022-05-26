@@ -23,7 +23,8 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
         {
             return View();
         }
-        
+
+        /*
         [Route("Home/Index/{poziom:int}")]
         public IActionResult Index(int poziom = 1)
         {
@@ -41,7 +42,7 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
             }
             return View();
         }
-        
+        */
         public IActionResult Privacy()
         {
             return View();
@@ -51,6 +52,13 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public ActionResult SetViewBag(string value)
+        {
+            ViewBag.Poziom = value;
+            return new EmptyResult();
         }
     }
 }

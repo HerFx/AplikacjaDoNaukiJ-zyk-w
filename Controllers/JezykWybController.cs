@@ -32,10 +32,11 @@ namespace AplikacjaDoNaukiJęzyków.Controllers
 
             return View(jezyki);
         }
-        public IActionResult Jezyk(string nazwaJezyka)
+        public IActionResult Jezyk(string nazwaJezyka, string poziom)
         {
             ViewBag.NazwaJezyka = nazwaJezyka;
-            var slowa = context.Slowa.Where(s => s.PoziomSlowa == "Zaawansowany");
+            ViewBag.Poziom = poziom;
+            var slowa = context.Slowa.Where(s => String.Equals(s.PoziomSlowa, poziom));
             return View(slowa);
         }
 

@@ -1,5 +1,6 @@
+@using Microsoft.AspNetCore.Components
 @{
-    ViewData["poziom"] ??= "Podstawowy";
+    ViewBag.Poziom ??= "Podstawowy";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -36,16 +37,30 @@
                     <li class="nav-item">
                         <a class="nav-link" asp-area="" asp-controller="Slownik" asp-action="Slownik">Słownik</a>
                     </li>
+                    <!--
                     <li class="nav-item dropdown">
+
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @ViewData["poziom"]
+                            @ViewBag.Poziom
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            
                             <a class="dropdown-item" href="~/Home/Index/1">Początkujący</a>
                             <a class="dropdown-item" href="~/Home/Index/2">Średniozaawansowany</a>
-                            <a class="dropdown-item" href="~/Home/Index/3">Zaawansowany</a>
+                            <a class="dropdown-item" onclick="...&Poziom=ViewBag.Poziom.ToString()&...">Zaawansowany</a>
+                             
+                            @foreach (var template in templates)
+                            {
+                                <input type="button" value=@template class="dropdown-item" onclick=ChangeStuff(EventArgs)/>
+                            }
+                            
                         </div>
+
+                        @functions {
+                            List<string> templates = new List<string>() { "Podstawowy", "Średniozaawansowany", "Zaawansowany" };
+                        }
                     </li>
+                    -->
                 </ul>
             </div>
         </div>
